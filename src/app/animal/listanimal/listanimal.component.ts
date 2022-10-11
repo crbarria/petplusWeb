@@ -112,6 +112,10 @@ export class ListanimalComponent implements OnInit {
       
       console.log(this.numeroestado)
 
+      this.buscarcolor()
+      this.buscarsexo()
+      this.buscarespecie()
+      this.buscarestado()
     })
 
   
