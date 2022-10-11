@@ -1,0 +1,28 @@
+.btn-default
+
+{
+ 
+background-color: #7ed957;
+ 
+color:#FFF;
+ 
+border-color: rgb(161, 254, 161);
+}
+
+.letra1{
+
+    color: #7ed957;
+
+}
+
+.centrotxt{
+
+    text-align: center;
+
+}
+
+.letras2{
+
+    font-weight: bold;
+    
+}

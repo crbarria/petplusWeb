@@ -1,10 +1,48 @@
-<button (click)="ListAnimal()">Funciona?</button>
 
-<br>
-<br>
 
-<input type="text"  [(ngModel)]="nombre" name="nombre" placeholder="Hola" />
-<button (click)="buscar()">Funciona?</button>
+<h1 class="letra1 centrotxt" style="font-weight: bold;">Busca la ficha de tu animal</h1>
+<br>
+<div class="d-grid gap-2 col-2 mx-auto">
+    <input type="text"  [(ngModel)]="buscar_input"  placeholder="      Ingrese un número de ficha" />
+    
+</div>
+<br>
+<div class="d-grid gap-2 col-1 mx-auto">
+    <button (click)="buscar()" class="btn btn-default" type="button">Buscar</button>
+    <button (click)="buscarcolor()"  class="btn btn-default" type="button">Buscar</button>
+    <button (click)="ListAnimal()" (click)="ListColor()" class="btn btn-default" type="button">Buscar todos los animales</button>
+  </div>
+  
+<br>
+<div>
+
+    <div class="p-5 mb-4 bg-light rounded-3 d-grid gap-2 col-5 mx-auto">
+
+        <h1 class="d-grid gap-2  mx-auto letra1" style="font-weight: bold;"> Número de ficha: {{n_ficha}} </h1>
+
+        <h1 style="font-weight: bold; color: rgb(93, 93, 196);" >Datos</h1>
+
+       
+        <br>
+        <h6 class="letras2">Nombre: {{ nombreA }}</h6>
+        <h6 class="letras2">Sexo: {{sexo}}</h6>
+        <h6 class="letras2">Especie: {{especie}}</h6>
+        <h6 class="letras2">Altura: {{altura}}</h6>
+        <h6 class="letras2">Color: {{nombre_color}}</h6>
+
+        <h6 class="letras2">numero color: {{numero}}</h6>
+
+        <h6 class="letras2">Numero de microchip: {{n_microchip}}</h6>
+        <h6 class="letras2">Raza: {{raza}}</h6>
+
+      </div>
+
+    
+
+
+
+
+</div>
 
 <br>
 
