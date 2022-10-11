@@ -8,9 +8,13 @@
 </div>
 <br>
 <div class="d-grid gap-2 col-1 mx-auto">
-    <button (click)="buscar()" class="btn btn-default" type="button">Buscar</button>
-    <button (click)="buscarcolor()"  class="btn btn-default" type="button">Buscar</button>
-    <button (click)="ListAnimal()" (click)="ListColor()" class="btn btn-default" type="button">Buscar todos los animales</button>
+    <button (click)="buscar()" class="btn btn-default" type="button" (click)="buscarcolor()" 
+    (click)="buscarsexo()" 
+    (click)="buscarespecie()"
+    (click)="buscarestado()">Buscar</button>
+
+    
+   
   </div>
   
 <br>
@@ -25,15 +29,13 @@
        
         <br>
         <h6 class="letras2">Nombre: {{ nombreA }}</h6>
-        <h6 class="letras2">Sexo: {{sexo}}</h6>
-        <h6 class="letras2">Especie: {{especie}}</h6>
-        <h6 class="letras2">Altura: {{altura}}</h6>
+        <h6 class="letras2">Sexo: {{nombre_sexo}}</h6>
+        <h6 class="letras2">Especie: {{nombreespecie}}</h6>
         <h6 class="letras2">Color: {{nombre_color}}</h6>
-
-        <h6 class="letras2">numero color: {{numero}}</h6>
+        <h6 class="letras2">Estado del animal: {{nombre_estado}}</h6>
+        
 
         <h6 class="letras2">Numero de microchip: {{n_microchip}}</h6>
-        <h6 class="letras2">Raza: {{raza}}</h6>
 
       </div>
 

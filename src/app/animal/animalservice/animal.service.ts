@@ -3,6 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Animal } from '../models/animal';
 import { Color } from '../models/color';
+import { Especie } from '../models/especie';
+import { Estado } from '../models/estado';
+import { Raza } from '../models/raza';
+import { Sexo } from '../models/sexo';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +15,10 @@ export class AnimalService {
 
   URLAnimal :  string = 'http://127.0.0.1:8000/app_animal/animal/';
   URLcolor : string = "http://127.0.0.1:8000/app_color/color/";
+  URLsexo : string = "http://127.0.0.1:8000/app_sexo/sexo/";
+  URLespecie :string = "http://127.0.0.1:8000/app_especie/especie/";
+  URLraza:string="http://127.0.0.1:8000/app_raza/raza/";
+  URLestado:string="http://127.0.0.1:8000/app_estado/estado/";
 
   constructor(private http : HttpClient) { }
 
@@ -30,5 +38,20 @@ export class AnimalService {
     return this.http.get<Color>(this.URLcolor + color)
   }
 
+  getsexo(sexo : string){
+    return this.http.get<Sexo>(this.URLsexo + sexo)
+  }
   
+  getespecie(especie :string){
+    return this.http.get<Especie>(this.URLespecie + especie)
+  }
+
+  getreza(raza :string){
+    return this.http.get<Raza>(this.URLraza + raza)
+  }
+
+  getestado(estado : string){
+    return this.http.get<Estado>(this.URLestado + estado)
+  }
+
 }
