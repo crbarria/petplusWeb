@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Animal } from '../models/animal';
 import { Color } from '../models/color';
+import { Dueno } from '../models/dueno';
 import { Especie } from '../models/especie';
 import { Estado } from '../models/estado';
 import { Raza } from '../models/raza';
@@ -19,6 +20,7 @@ export class AnimalService {
   URLespecie :string = "http://127.0.0.1:8000/app_especie/especie/";
   URLraza:string="http://127.0.0.1:8000/app_raza/raza/";
   URLestado:string="http://127.0.0.1:8000/app_estado/estado/";
+  URLdueno:string="http://127.0.0.1:8000/app_dueno/dueno/"
 
   constructor(private http : HttpClient) { }
 
@@ -52,6 +54,10 @@ export class AnimalService {
 
   getestado(estado : string){
     return this.http.get<Estado>(this.URLestado + estado)
+  }
+
+  getdueno(dueno:string){
+    return this.http.get<Dueno>(this.URLdueno + dueno)
   }
 
 }

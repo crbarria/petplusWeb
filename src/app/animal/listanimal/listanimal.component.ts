@@ -53,6 +53,13 @@ export class ListanimalComponent implements OnInit {
   public numeroestado = this.idestado;
   public nombre_estado:string=""; 
 
+
+  //Obtener el dueno
+
+  public iddueno:string=""
+  public numerodueno = this.iddueno;
+  public nombre_dueno:string="";
+
   //Variable de los atributos del animal
   public n_ficha: number=0
   public nombreA : string=""
@@ -69,6 +76,8 @@ export class ListanimalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+ //------------------------------- TESTEO ------------------------------------ 
   ListAnimal(){
     this.serviceanimal.getAnimal().subscribe((result : Animal[])=>{
     console.log(result)
@@ -85,43 +94,49 @@ export class ListanimalComponent implements OnInit {
     });
 
   }
+//---------------------------------- FIN TESTEO -------------------------------
+
+
 
   //nuno hace referencia al nombre de la variable que almacena la data
-
 
   public buscar(){
       this.serviceanimal.getuno(this.buscar_input).subscribe((nuno : any) => {
       console.log(nuno) 
 
+      //Datos propios del array list
       this.n_ficha = nuno.animales.id_animal
       this.nombreA = nuno.animales.nombre
       this.n_microchip = nuno.animales.n_microchip
 
 
-
+      //Datos que se obtienen gracias a las foraenas en la BD
       this.idsexo = nuno.animales.sexo_id_sexo_id
       this.idcolor = nuno.animales.color_id_color_id
       this.idespecie = nuno.animales.especie_id_especie_id
       this.idestado = nuno.animales.estado_id_estado_id
+      this.iddueno = nuno.animales.dueno_id_dueno_id
       
-
+      //Almaceno la informaicon de la id en una variable
       this.numero = this.idcolor
       this.numerosexo = this.idsexo
       this.numeroespecie = this.idespecie
       this.numeroestado = this.idestado
+      this.numerodueno = this.iddueno
       
-      console.log(this.numeroestado)
-
+      //Ejecuto las funciones al mismo tiempo que busco el animal
       this.buscarcolor()
       this.buscarsexo()
       this.buscarespecie()
       this.buscarestado()
+      this.buscardueno()
     })
 
   
   }
   
 
+  //Busco los atributos del animal por separado
   public buscarcolor(){
     this.serviceanimal.getcolor(this.numero).subscribe((nuno1 :any)=>{
       this.nombre_color = nuno1.colores.color
@@ -148,6 +163,11 @@ export class ListanimalComponent implements OnInit {
     })
   }
 
+  public buscardueno(){
+    this.serviceanimal.getdueno(this.numerodueno).subscribe((nuno5 : any)=>{
+      this.nombre_dueno = nuno5.dueno.nombre_completo
+    })
+  }
   
 
 
