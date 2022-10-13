@@ -1,0 +1,35 @@
+
+
+<input type="text" [(ngModel)]="buscar_input" name="" id="">
+<button (click)="buscar()">Hola</button>
+
+<br>
+<br>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Comuna</th>
+        <th scope="col">Descripcion</th>
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let veterinaria of todas">
+        <th scope="row">{{veterinaria.id_veterinaria}}</th>
+        <td>{{veterinaria.nombre_vet}}</td>
+        <td>{{veterinaria.direccion}}</td>
+        <td>{{veterinaria.telefono}}</td>
+        <td>{{veterinaria.correo}}</td>
+        <td>{{veterinaria.comuna_id_comuna_id}}</td>
+        <td>{{veterinaria.descripcion}}</td>
+     
+    </tbody>
+  </table>
